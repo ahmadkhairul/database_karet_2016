@@ -1,0 +1,15 @@
+Options All -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f [NC]
+RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.htm -f [NC]
+RewriteRule ^(.*)$ $1.htm [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.html -f [NC]
+RewriteRule ^(.*)$ $1.html [L,QSA] 
+errorDocument 404 http://localhost/database/pages/index
+errorDocument 400 http://localhost/database/pages/index
+errorDocument 401 http://localhost/database/pages/index
+errorDocument 500 http://localhost/database/pages/index
+errorDocument 403 http://localhost/database/pages/index
